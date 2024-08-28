@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">   
+</head>
+<body>
+    <h1>Summarize Your Text</h1>
+    <form action="/summarize" method="post">
+        <textarea id="text_to_summarize" name="text_to_summarize" rows="10" cols="50" placeholder="Enter text to summarize..."></textarea><br><br>
+        <button id="submit-button" type="submit">Summarize</button>
+    </form>
+
+    {% if summary %}
+    <h3>Summary:</h3>
+    <textarea id="summary" rows="10" cols="50" readonly>{{ summary }}</textarea>
+    {% endif %}
+</body>
+</html>
